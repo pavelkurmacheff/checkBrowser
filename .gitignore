@@ -1,0 +1,17 @@
+# compiled output
+/build
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+
+# System Files
+.DS_Store
+
+# next
+.next
+out
+
+.npmrc

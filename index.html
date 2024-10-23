@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider and User-Agent Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 32px;
+
+            @media (max-width: 500px) {
+                flex-direction: column;
+            }
+        }
+
+        .block {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .provider-info {
+            color: #f0ad4e;
+        }
+
+        .user-agent-info {
+            color: #f0ad4e;
+        }
+
+        .wallet-info {
+            color: #d9534f;
+        }
+
+        .device-info {
+            color: #5cb85c;
+        }
+
+        .wallet-address {
+            color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+<h1>Provider and User-Agent Detector</h1>
+
+<!-- Контейнер для двух блоков -->
+<div class="container">
+    <!-- Блок для проверки инжектированного провайдера -->
+    <div class="block">
+        <h2>Provider Information</h2>
+        <div id="provider-info" class="info provider-info"></div>
+    </div>
+
+    <!-- Блок для проверки User-Agent -->
+    <div class="block">
+        <h2>User-Agent Information</h2>
+        <div id="user-agent-info" class="info user-agent-info"></div>
+        <div id="wallet-info" class="info wallet-info"></div>
+        <div id="device-info" class="info device-info"></div>
+    </div>
+
+    <div>
+        <h1>Получить адрес кошелька</h1>
+        <button id="connectButton">Подключить кошелек</button>
+        <p>Ваш адрес: <span id="walletAddress">Нажмите кнопку для подключения</span></p>
+    </div>
+</div>
+
+<!-- Подключение внешнего файла script.js -->
+<script src="script.js"></script>
+</body>
+</html>

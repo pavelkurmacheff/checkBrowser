@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet</title>
+</head>
+<body>
+<h1>Подключить кошелек и узнать адрес</h1>
+<button id="connectButton">Подключить кошелек</button>
+<p>Ваш адрес: <span id="walletAddress">Нажмите кнопку для подключения</span></p>
+
+<!-- Подключаем библиотеку ethers.js -->
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+<script>
+    function getWalletAddress() {
+
+        const provider = Boolean(window.ethereum?.isOneInchWallet)
+
+        alert(provider)
+
+        // Проверяем, доступен ли объект window.ethereum
+        // if (typeof window.OneInchIOSWallet !== 'undefined') {
+        //     try {
+        //         // Создаем провайдера на основе Metamask или другого кошелька
+        //         const provider = new ethers.providers.Web3Provider(window.ethereum);
+        //
+        //         // Запрашиваем доступ к кошельку
+        //         await provider.send("eth_requestAccounts", []);
+        //
+        //         // Создаем signer (управление аккаунтом)
+        //         const signer = provider.getSigner();
+        //
+        //         // Получаем адрес кошелька
+        //         const walletAddress = await signer.getAddress();
+        //
+        //         // Выводим адрес на страницу
+        //         document.getElementById("walletAddress").textContent = walletAddress;
+        //
+        //     } catch (error) {
+        //         console.error("Ошибка при подключении к кошельку:", error);
+        //         document.getElementById("walletAddress").textContent = 'Ошибка подключения';
+        //     }
+        // } else {
+        //     // Если кошелек не найден, выводим сообщение
+        //     alert("Web3 кошелек не найден. Установите MetaMask или 1inch Wallet.");
+        //     document.getElementById("walletAddress").textContent = 'Кошелек не найден';
+        // }
+    }
+
+    // Добавляем обработчик события на кнопку
+    document.getElementById("connectButton").addEventListener("click", () => {
+      setTimeout(()=> getWalletAddress(), 3000)  ;
+    });
+</script>
+</body>
+</html>
