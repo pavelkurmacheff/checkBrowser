@@ -15,9 +15,13 @@
 <script>
     function getWalletAddress() {
 
-        const provider = Boolean(window.ethereum?.isOneInchWallet)
-
-        alert(provider)
+        window.onload = async function() {
+            if (typeof window.ethereum !== 'undefined') {
+                alert(window.ethereum);
+            } else {
+                alert("no provider");
+            }
+        };
 
         // Проверяем, доступен ли объект window.ethereum
         // if (typeof window.OneInchIOSWallet !== 'undefined') {
